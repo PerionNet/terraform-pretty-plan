@@ -39,7 +39,7 @@ export function parseChangeType(changes: string[]): ChangeType {
 export function parseId(resource: RawResource): ResourceId {
 
     const idSegments = resource.address.split('.');
-    const resourcePrefixes = idSegments.slice(0, idSegments.length - 2);
+    const resourcePrefixes = resource.address.split('#')[0].split('/');
 
     return { 
         name: resource.name, 
